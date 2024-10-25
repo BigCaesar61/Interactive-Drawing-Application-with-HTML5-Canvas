@@ -55,3 +55,28 @@ canvas.addEventListener('mouseup', () => {
 });
 
 //event listener for when the user stops drawing
+
+
+//Task 4: Implement color selection and canvas clearing functionality.
+
+document.querySelectorAll('input[name="tool"]').forEach(tool => {
+    tool.addEventListener('change', (e) => {
+        selectedTool = e.target.value;
+    });
+});
+
+//^ tool selector
+
+document.getElementById('colorPicker').addEventListener('change', (e) => {
+    color = e.target.value;
+});
+
+//color selector
+
+document.getElementById('clearCanvas').addEventListener('click', () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "darkgray";
+    ctx.fillRect(0, 0, canvas.clientWidth, canvas.height);
+});
+
+//clear canvas button
